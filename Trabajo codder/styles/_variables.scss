@@ -1,0 +1,47 @@
+// Variables SCSS para el proyecto Zlatan
+
+// Colores principales
+$color-primario: #ffc107;
+$color-secundario: #1a1a1a;
+$color-oscuro: #212529;
+$color-claro: #f8f9fa;
+$color-blanco: #ffffff;
+
+// Colores de texto
+$texto-oscuro: #333;
+$texto-claro: #fff;
+$texto-gris: #6c757d;
+
+// Fuentes
+$fuente-principal: 'Roboto', sans-serif;
+
+// Tamaños de fuente
+$font-size-base: 1rem;
+$font-size-grande: 1.5rem;
+$font-size-titulo: 2.5rem;
+$font-size-hero: 4rem;
+
+// Espaciado
+$espaciado-pequeno: 10px;
+$espaciado-medio: 20px;
+$espaciado-grande: 40px;
+$espaciado-xl: 80px;
+
+// Bordes
+$border-radius: 10px;
+$border-radius-pequeno: 5px;
+$border-width: 2px;
+
+// Sombras
+$sombra-card: 0 5px 15px rgba(0,0,0,0.2);
+$sombra-hover: 0 10px 20px rgba(0,0,0,0.2);
+
+// Transiciones
+$transicion-rapida: 0.3s;
+$transicion-lenta: 0.5s;
+
+// Breakpoints (para responsive)
+$breakpoint-mobile: 576px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 992px;
+$breakpoint-xl: 1200px;

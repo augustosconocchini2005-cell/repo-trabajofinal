@@ -1,0 +1,177 @@
+// Archivo principal SCSS
+// Este archivo importa las variables y mixins
+
+@import 'variables';
+@import 'mixins';
+
+// Estilos generales usando variables
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $fuente-principal;
+    color: $texto-oscuro;
+    line-height: 1.6;
+}
+
+// Navbar con variables y mixins
+.navbar {
+    padding: 1rem 0;
+    @include box-shadow($sombra-card);
+    
+    .navbar-brand {
+        font-size: $font-size-grande;
+        font-weight: 900;
+        
+        i {
+            color: $color-primario;
+        }
+    }
+    
+    .nav-link {
+        font-weight: 500;
+        margin: 0 $espaciado-pequeno;
+        @include transition(color);
+        
+        &:hover {
+            color: $color-primario !important;
+        }
+        
+        &.active {
+            color: $color-primario !important;
+        }
+    }
+}
+
+// Hero Section usando variables
+.hero-section {
+    height: 100vh;
+    @include flex-center;
+    text-align: center;
+    color: $texto-claro;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+    
+    .hero-title {
+        font-size: $font-size-hero;
+        font-weight: 900;
+        margin-bottom: $espaciado-medio;
+    }
+    
+    .hero-buttons {
+        .btn {
+            margin: $espaciado-pequeno;
+            padding: 12px 40px;
+            font-weight: 700;
+            @include transition(all);
+            
+            &:hover {
+                transform: translateY(-2px);
+                @include box-shadow($sombra-hover);
+            }
+        }
+    }
+}
+
+// Estadisticas usando nesting de SASS
+.estadisticas-section {
+    background-color: $color-secundario;
+    
+    .estadistica-box {
+        padding: $espaciado-medio;
+        @include transition(transform);
+        
+        &:hover {
+            transform: scale(1.1);
+        }
+        
+        .numero-grande {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: $color-primario;
+        }
+    }
+}
+
+// Cards con hover effect
+.equipo-card {
+    @include hover-lift;
+    border: none;
+    border-radius: $border-radius;
+    
+    img {
+        height: 200px;
+        object-fit: cover;
+    }
+    
+    .equipo-periodo {
+        color: $color-primario;
+        font-weight: 700;
+    }
+}
+
+// Frases con variables
+.frases-section {
+    background-color: $color-oscuro;
+    
+    .frase-box {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: $border-radius;
+        border-left: 4px solid $color-primario;
+        @include transition(background-color);
+        
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+    }
+}
+
+// Footer
+.footer {
+    background-color: #000;
+    color: $texto-claro;
+    padding: 30px 0;
+    
+    .redes-sociales {
+        a {
+            @include transition(transform);
+            display: inline-block;
+            
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+    }
+}
+
+// Responsive usando mixins
+@include responsive(tablet) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .titulo-seccion {
+        font-size: 2rem;
+    }
+}
+
+@include responsive(mobile) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-section {
+        padding: 100px 20px 50px;
+    }
+}
+
+// Utilidades
+.shadow {
+    @include box-shadow($sombra-card);
+}
+
+.btn-warning {
+    @include boton-personalizado($color-primario, $texto-oscuro);
+}
